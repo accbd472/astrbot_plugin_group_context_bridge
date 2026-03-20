@@ -1,0 +1,44 @@
+{
+  "default_recent_count": {
+    "description": "默认读取每个来源群最近多少条消息",
+    "type": "int",
+    "default": 12,
+    "hint": "建议 6~12"
+  },
+  "default_max_chars": {
+    "description": "注入桥接上下文时允许的最大字符数",
+    "type": "int",
+    "default": 1800,
+    "hint": "建议 1200~2500，过大可能增加模型负担"
+  },
+  "max_saved_per_group": {
+    "description": "每个群本地最多缓存多少条最近消息",
+    "type": "int",
+    "default": 60,
+    "hint": "仅保存插件自己的轻量缓存，不修改 AstrBot 原始数据库"
+  },
+  "only_when_wake": {
+    "description": "仅在消息已被 AstrBot 判定为唤醒时才注入桥接上下文",
+    "type": "bool",
+    "default": true,
+    "hint": "建议开启，避免普通聊天也被注入"
+  },
+  "allow_collect_from_blocked_groups": {
+    "description": "允许从被封禁/黑名单群继续采集消息作为来源群",
+    "type": "bool",
+    "default": true,
+    "hint": "前提是该群事件仍能传到插件监听器；若更前层已丢弃事件，则无法实时采集"
+  },
+  "command_prefixes": {
+    "description": "命令前缀列表，命中这些前缀的消息不会作为普通文本缓存",
+    "type": "list",
+    "default": ["/", "!", "。", "！"],
+    "hint": "避免把管理命令本身当成上下文内容"
+  },
+  "inject_template": {
+    "description": "桥接注入模板",
+    "type": "string",
+    "default": "[桥接上下文开始]\\n来源群: {source_gids}\\n{context_block}\\n[桥接上下文结束]\\n\\n{original_message}",
+    "hint": "可用变量：{source_gids} {context_block} {original_message}"
+  }
+}
