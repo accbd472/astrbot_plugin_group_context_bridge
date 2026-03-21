@@ -1,5 +1,0 @@
-name: astrbot_plugin_group_context_bridge
-desc: 低侵入的 AstrBot 群聊上下文桥接插件，支持将一个或多个来源群的最近消息以只读上下文方式注入目标群对话，不修改数据库、不改变真实会话归属，适合跨群信息参考、封禁群摘要延续和多群上下文融合场景。
-version: 1.1.0
-author: accbd472
-repo: https://github.com/accbd472/astrbot_plugin_group_context_bridge
