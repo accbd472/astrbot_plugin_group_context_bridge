@@ -1,0 +1,5 @@
+name: astrbot_plugin_group_context_bridge
+desc: 多来源群聊上下文只读桥接插件，可将来源群最近消息或摘要注入目标群会话输入。
+version: 1.1.0
+author: accbd472
+repo: https://github.com/accbd472/astrbot_plugin_group_context_bridge
